@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+	{% block css %}
+    <link rel="stylesheet" href="{{ static('css/styles.css') }}" />
+	{% endblock css %}
+</head>
+
+
+<body>
+	<div class="page-content-wrapper">
+		{% block header %}
+			{% include 'regular/base/header.html' %}
+		{% endblock header %}
+
+		{% block content %}
+		{% endblock content %}
+	</div>
+	
+		{% block footer %}
+			{% include 'regular/base/footer.html' %}
+		{% endblock footer %}
+	
+		{% block modal %}
+		{% endblock %}
+	
+		{% block script %}
+		{% endblock script%}
+	</div>
+</body>
+</html>

@@ -1,5 +1,45 @@
 @import 'core/*';
 
+//----> BREAKPOINTS
+@import 'node_modules/sass-mq/mq';
+
+$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  750px,
+    desktop: 970px,
+    wide: 1170px,
+);
+
+.content-area {
+    height: 100%;
+    margin: 0 auto;
+    width: 320px;
+    @include mq($from: tablet, $until: desktop) {
+        width: 750px;
+    }
+    @include mq($from: desktop, $until: wide) {
+        width: 970px;
+    }
+    @include mq($from: wide) {
+        width: 1170px;
+    }
+}
+
+.page-content-wrapper {
+    margin-bottom: -374px;
+    min-height: 100%;
+    &:after {
+        content: '';
+        display: block;
+        height: 600px;
+    }
+}
+
+.page-footer {
+    height: 374px;
+}
+//----> BREAKPOINTS END
+
 //----> TYPOGRAPHY
 @import 'node_modules/modularscale-sass/stylesheets/modularscale';
 
@@ -38,3 +78,19 @@ body {
     @include medium();
 }
 //----> TYPOGRAPHY END
+
+
+// ################## BLOCKS ##################
+
+//----> HEADER
+@import 'blocks/header-top/*';
+@import 'blocks/header-bottom/*';
+//----> HEADER END
+
+//----> FOOTER
+@import 'blocks/footer-middle/*';
+@import 'blocks/footer-bottom/*';
+//----> FOOTER END
+
+// ################## END BLOCKS ##################
+
