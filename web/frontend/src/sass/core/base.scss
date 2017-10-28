@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+body {
+  background-color: white;
+}
+
+button {
+  border-style: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0px;
+    border: none;
+}
+
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
