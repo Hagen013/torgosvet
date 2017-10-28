@@ -10,7 +10,7 @@
 
 *demo
 *newdemo
-
+*fonts_build
 
 frontend/static/*
 backend/config/settings/local.py

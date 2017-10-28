@@ -1,1 +1,40 @@
-@import 'core/*'
+@import 'core/*';
+
+//----> TYPOGRAPHY
+@import 'node_modules/modularscale-sass/stylesheets/modularscale';
+
+$modularscale: (
+    base: 1rem,
+    ratio: $minor-third
+);
+
+@import '../../static/fonts/MuseoSansLight/MuseoSansLight';
+@import '../../static/fonts/MuseoSansRegular/MuseoSansRegular';
+@import '../../static/fonts/MuseoSansMedium/MuseoSansMedium';
+@import '../../static/fonts/MuseoSansBold/MuseoSansBold';
+@import '../../static/fonts/MuseoSansBlack/MuseoSansBlack';
+
+@mixin light {
+    font-family: "MuseoSansCyrl-100";
+}
+
+@mixin regular {
+    font-family: "MuseoSansCyrl-300";
+}
+
+@mixin medium {
+    font-family: "MuseoSansCyrl-500";
+}
+
+@mixin bold {
+    font-family: "MuseoSansCyrl-700";
+}
+
+@mixin black {
+    font-family: "MuseoSansCyrl-900";
+}
+
+body {
+    @include medium();
+}
+//----> TYPOGRAPHY END

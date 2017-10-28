@@ -40,14 +40,13 @@ return gulp.src("./src/fonts/**/*.{ttf,otf}")
 // DEV =======================================================================
 // css (sass)
 gulp.task('styles', function() {
-console.log(paths.sass);
-gulp.src(paths.sass + '/mobile.scss')
-.pipe(sourcemaps.init())
-.pipe(bulkSass())
-.pipe(sass().on('error', onError))
-.pipe(autoprefixer({browsers: ['last 2 version']}))
-.pipe(sourcemaps.write())
-.pipe(gulp.dest(paths.css));
+gulp.src(paths.sass + '/styles.scss')
+	.pipe(sourcemaps.init())
+	.pipe(bulkSass())
+	.pipe(sass().on('error', onError))
+	.pipe(autoprefixer({browsers: ['last 2 version']}))
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest(paths.css));
 });
 
 
