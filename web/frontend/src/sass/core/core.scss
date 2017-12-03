@@ -52,9 +52,6 @@
   display: flex;
   width: 100%;
   padding: 0px 15px 0px 15px;
-  @include mq($from: tablet, $until: desktop) {
-    width: 750px;
-  }
   @include mq($from: desktop, $until: wide) {
     width: 970px;
   }

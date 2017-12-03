@@ -8,8 +8,8 @@
     cursor: pointer;
     overflow: hidden;
     border-radius: 2px;
-    transition-duration: 0.2s;
-    transition-property: box-shadow;
+
+    transition: 0.2s ease;
     @include mdc-elevation(2);
     &:hover {
         z-index: 500;
