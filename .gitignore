@@ -12,5 +12,5 @@
 *newdemo
 *fonts_build
 
-frontend/static/*
+web/frontend/static/*
 backend/config/settings/local.py
