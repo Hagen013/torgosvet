@@ -1,6 +1,5 @@
 // Галп используется ТОЛЬКО для разработки и сборки css, шрифтов, картинок
 // Файл разделён на 3 части: common, dev, prod
-
 var gulp = require('gulp'),
 postcss = require('gulp-postcss'),
 autoprefixer = require('gulp-autoprefixer'),
@@ -11,6 +10,8 @@ browserSync = require('browser-sync').create(),
 exec = require('child_process').exec,
 fontgen = require('gulp-fontgen'),
 reload = browserSync.reload;
+
+
 
 // COMMON ====================================================================
 // callback на ошибку
@@ -25,6 +26,7 @@ var paths = {
 	app:  './',
 	css:  './static/css',
 	sass: './src/sass',
+	node_modules: './node_modules/'
 }
 
 // генерация шрифтов - жёстко связано со сборкой scss
@@ -43,7 +45,7 @@ gulp.task('styles', function() {
 gulp.src(paths.sass + '/styles.scss')
 	.pipe(sourcemaps.init())
 	.pipe(bulkSass())
-	.pipe(sass().on('error', onError))
+	.pipe(sass({ importer: require('npm-sass').importer }).on('error', onError))
 	.pipe(autoprefixer({browsers: ['last 2 version']}))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(paths.css));
@@ -52,26 +54,26 @@ gulp.src(paths.sass + '/styles.scss')
 
 // run django for browsersync
 gulp.task('runserver', function() {
-exec('python ../backend/manage.py runserver', function (err, stdout, stderr) {
-	console.log(stdout);
-	console.log(stderr);
-});
+	exec('python ../backend/manage.py runserver', function (err, stdout, stderr) {
+		console.log(stdout);
+		console.log(stderr);
+	});
 })
 
 // browsersync
 gulp.task('browserSyncTask', ['runserver'], function() {
-browserSync.init({
-	notify: false,
-	proxy: 'localhost:8000'
-});
+	browserSync.init({
+		notify: false,
+		proxy: 'localhost:8000'
+	});
 });
 
 // watch
 gulp.task('watchTask', function() {
-gulp.watch(paths.sass + '/**/*.scss', ['styles', reload]);
-gulp.watch(paths.sass + '/**/**/*.scss', ['styles', reload]);
-gulp.watch(['./**/*.{html,py}'], reload);
-gulp.watch(['./**/**/*.{html}'], reload);
+	gulp.watch(paths.sass + '/**/*.scss', ['styles', reload]);
+	gulp.watch(paths.sass + '/**/**/*.scss', ['styles', reload]);
+	gulp.watch(['./**/*.{html,py}'], reload);
+	gulp.watch(['./**/**/*.{html}'], reload);
 });
 
 // default
@@ -92,13 +94,12 @@ gulp.task('prod_font', function() {
 	.pipe(gulp.dest('./static/fonts/'))
 });
 
-
 //CSS
 gulp.task('prod_css', function() {
 console.log(paths.sass);
 gulp.src(paths.sass + '/styles.scss')
 	.pipe(bulkSass())
-	.pipe(sass({outputStyle: 'compressed'}).on('error', onError))
+	.pipe(sass({outputStyle: 'compressed', importer: require('npm-sass').importer}).on('error', onError))
 	.pipe(autoprefixer({browsers: ['last 2 version']}))
 	.pipe(gulp.dest(paths.css));
 });

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="breadcrumbs">
+        <div class="content-area breadcrumbs__content-area">
+            <ul class="breadcrumbs__items">
+                <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="#">Главная</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <span class="icon icon_chevron-right breadcrumbs__delimeter"></span>
+                    <a class="breadcrumbs__link" href="#">Светодиодные светильники</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <span class="icon icon_chevron-right breadcrumbs__delimeter"></span>
+                    <a class="breadcrumbs__link" href="#">Трековые</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <span class="icon icon_chevron-right breadcrumbs__delimeter"></span>
+                    <a class="breadcrumbs__link" href="#">Однофазные</a>
+                </li>
+            </ul>
+            <h1 class="title">
+                Однофазные трековые светильники
+            </h1>
+        </div>
+    </div>
+
+    <div class="content-area">
+        <div class="catalog">
+            <div class="catalog__left-content">
+                <div class="catalog__nav green_scrollbar">
+                    <a class="catalog__nav-item button ripple">
+                        Трековые
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Светильники встраиваемые
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Светильники накладные
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Светодиодные панели
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Светильники точечные
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Подводные для бассейнов и водоёмов
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Светильники настенные
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Светильники универсальные IP67
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Светильники мебельные, витринные
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Подсветка картин и зеркал
+                    </a>
+                    <a class="catalog__nav-item button ripple">
+                        Разное
+                    </a>
+                </div>
+            </div>
+            <div class="catalog__right-content">
+                <div class="gallery">
+                    <div class="gallery__top">
+                        <div class="gallery__sorting">
+                            <div class="gallery__sorting-caption">
+                                Сортировать:
+                            </div>
+                            <div class="gallery__sorting-button">
+                                по популярности
+                            </div>
+                            <div class="gallery__sorting-button">
+                                по цене
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__items">
+                        {% for _ in range(24) %}
+                        <a class="card gallery__item" href="#">
+                            <div class="card__img-wrap">
+                                <img class="card__img" src="{{ static('img/placeholder.jpg') }}" alt="Изображение">
+                                <div class="card__img-overlay-wrapper">
+                                    <div class="card__details-wrap">
+                                        <button class="button button_stroked ripple card__details">
+                                            Подробнее
+                                        </button>
+                                    </div>
+                                    <div class="card__img-overlay">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">
+                                Светодиодный светильник трековый 2L PX16 (12W, 220V, Warm White)
+                                </h3>
+                                <div class="card__price">
+                                    <div class="price">14880</div>
+                                </div>
+                            </div>
+                            <div class="card__purchase fab ripple">
+                                <span class="icon fab__icon icon_cart-plus"></span>
+                            </div>
+                            <div class="card__ribbon ribbon ribbon_green">
+                                <div class="ribbon__content">
+                                В наличии
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div class="pagination">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

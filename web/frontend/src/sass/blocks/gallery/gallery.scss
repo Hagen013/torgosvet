@@ -1,0 +1,34 @@
+.gallery {
+
+}
+
+.gallery__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery__item {
+    margin-bottom: 16px;
+}
+
+.gallery__top {
+    height: 45px;
+    width: 100%;
+    background: $white;
+}
+
+.gallery__sorting {
+    display: flex;
+    height: 100%;
+}
+
+.gallery__sorting-caption {
+    @include bold();
+}
+
+.gallery__sorting-button {
+    margin-left: 15px;
+    color: #4d4d4d;
+    cursor: pointer;
+}

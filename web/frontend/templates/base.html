@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+	{% block css %}
+    <link rel="stylesheet" href="{{ static('css/styles.css') }}" />
+	{% endblock css %}
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+
+<body>
+	<div class="main" id="main">
+		<div class="page-content-wrapper">
+			{% block header %}
+				{% include 'base/header.html' %}
+			{% endblock header %}
+
+			{% block content %}
+			{% endblock content %}
+		</div>
+	
+			{% block footer %}
+				{% include 'base/footer.html' %}
+			{% endblock footer %}
+		
+	</div>
+	{% block modal %}
+	<div class="side-menu" 
+		id="side-menu"
+		:class="{ sideMenu_visible: isVisible }"
+		:class="{ sideMenu__hidden: !isVisible}"
+	>
+		<div class="side-menu__overlay" @click="hideSideMenu">
+		</div>
+		<div class="side-menu__content" id="side-menu__content">
+			<div class="side-menu__auth-area">
+				<div class="side-menu__close button_round ripple"
+					@click="hideSideMenu"
+				>
+					<span class="icon icon_close"></span>
+				</div>
+			</div>
+            <div class="side-menu__delimeter"></div>
+				<a class="side-menu__item button ripple"
+					@click="showNavMenu"
+				>
+					<i class="button__icon icon icon_list"></i>
+					Все категории
+				</a>
+				<a class="side-menu__item button ripple">
+					<i class="button__icon icon icon_rouble"></i>
+					Доставка и оплата
+				</a>
+				<a class="side-menu__item button ripple">
+					<i class="button__icon icon">%</i>
+					Скидки
+				</a>
+				<a class="side-menu__item button ripple">
+					<i class="button__icon icon icon_help-outline"></i>
+					Обратная связь
+				</a>
+				<div class="side-menu__delimeter"></div>
+				<a class="side-menu__item button ripple">
+					<i class="button__icon icon acid-green">Т</i>
+					О магазине
+				</a>
+		</div>
+	</div>
+	<div class="nav-menu" id="nav-menu"
+	>
+		<div class="nav-menu__header">
+			<div class="nav-menu__control nav-menu__control_back">
+				<div class="button_round ripple">
+					<span class="icon icon_chevron-left"></span>
+				</div>
+			</div>
+			<div class="nav-menu__title">
+				Каталог
+			</div>
+			<div class="nav-menu__control nav-menu__control_close" @click="hideNavMenu">
+				<div class="button_round ripple">
+					<span class="icon icon_close"></span>
+				</div>
+			</div>
+		</div>
+		<div class="side-menu__delimeter"></div>
+		<div class="nav-menu__content">
+			<a class="side-menu__item button ripple">
+				Светодиодные ленты
+			</a>
+			<a class="side-menu__item button ripple">
+				Светодиодные модули
+			</a>
+			<a class="side-menu__item button ripple">
+				Алюминиевый профиль
+			</a>
+			<a class="side-menu__item button ripple">
+				Управление светом
+			</a>
+			<a class="side-menu__item button ripple">
+				Блоки питания и драйверы
+			</a>
+			<a class="side-menu__item button ripple">
+				Светодиодные светильники
+			</a>
+			<a class="side-menu__item button ripple">
+				Светодиодные прожекторы
+			</a>
+			<a class="side-menu__item button ripple">
+				Светодиодные люстры
+			</a>
+			<a class="side-menu__item button ripple">
+				Светодиодные лампы
+			</a>
+			<a class="side-menu__item button ripple">
+				Светодиоды
+			</a>
+			<a class="side-menu__item button ripple">
+				Бегущие строки
+			</a>
+			<a class="side-menu__item button ripple">
+				Фитоосвещение
+			</a>
+			<a class="side-menu__item button ripple">
+				Светодиодные рекламные доски
+			</a>
+			<a class="side-menu__item button ripple">
+				Промышленное и складское освещение
+			</a>
+		</div>
+	</div>
+	{% endblock modal %}
+
+	{% block script %}
+		<script src="{{ static('js/common.js') }}"></script>
+		<script src="{{ static('js/scripts.js') }}"></script>
+	{% endblock script%}
+
+</body>
+</html>

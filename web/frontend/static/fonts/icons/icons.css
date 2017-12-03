@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "icons";
+    src: url("/static/fonts/icons/icons.eot");
+    src: url("/static/fonts/icons/icons.eot?#iefix") format("embedded-opentype"),
+         url("/static/fonts/icons/icons.woff2") format("woff2"),
+         url("/static/fonts/icons/icons.woff") format("woff"),
+         url("/static/fonts/icons/icons.ttf") format("ttf"),
+         url("/static/fonts/icons/icons.svg#icons") format("svg");
+    font-style: normal;
+    font-weight: 300;
+}

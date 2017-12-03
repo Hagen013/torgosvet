@@ -1,0 +1,46 @@
+.nav-menu {
+    position: fixed;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    transition: transform 300ms ease-out;
+    background: $white;
+    will-change: transform;
+    z-index: 20000;
+}
+
+
+.nav-menu__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 74px;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.nav-menu__control {
+    display: flex;
+}
+
+.nav-menu__content {
+    overflow: auto;
+}
+
+.nav-menu__title {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 0;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: ms(1);
+    line-height: 24px;
+    flex-grow: 1;
+}

@@ -6,9 +6,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name="regular/index.html"))
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
+    url(r'^catalog/$', TemplateView.as_view(template_name="pages/catalog.html")),
+    url(r'^product/$', TemplateView.as_view(template_name="pages/product.html")),
+    url(r'^components/$', TemplateView.as_view(template_name="pages/components.html"))
 ]
-
 
 if settings.DEBUG:
     import debug_toolbar

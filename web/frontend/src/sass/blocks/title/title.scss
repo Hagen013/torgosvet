@@ -1,0 +1,11 @@
+.title {
+    width: 100%;
+    padding: 0px 0px 15px 0px;
+    font-size: ms(2);
+    text-transform: uppercase;
+    border-bottom: 3px solid #eee;
+    @include bold();
+    @include mq($from: tablet) {
+        font-size: ms(3);
+    }
+}

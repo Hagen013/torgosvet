@@ -1,7 +1,5 @@
-@import 'core/*';
-
 //----> BREAKPOINTS
-@import 'node_modules/sass-mq/mq';
+@import 'sass-mq/mq';
 
 $mq-breakpoints: (
     mobile:  320px,
@@ -9,38 +7,18 @@ $mq-breakpoints: (
     desktop: 970px,
     wide: 1170px,
 );
-
-.content-area {
-    height: 100%;
-    margin: 0 auto;
-    width: 320px;
-    @include mq($from: tablet, $until: desktop) {
-        width: 750px;
-    }
-    @include mq($from: desktop, $until: wide) {
-        width: 970px;
-    }
-    @include mq($from: wide) {
-        width: 1170px;
-    }
-}
-
-.page-content-wrapper {
-    margin-bottom: -374px;
-    min-height: 100%;
-    &:after {
-        content: '';
-        display: block;
-        height: 600px;
-    }
-}
-
-.page-footer {
-    height: 374px;
-}
 //----> BREAKPOINTS END
 
-//----> TYPOGRAPHY
+//----> MATERIAL COMPONENTS
+@import '@material/elevation/_mixins';
+@import '@material/ripple/_mixins';
+@import '@material/button/_mixins';
+@import '@material/fab/_mixins';
+@import '@material/checkbox/mdc-checkbox';
+@import '@material/form-field/mdc-form-field';
+//----> MATERIAL COMPONENTS END
+
+//----> TYPOGRAPHY AND ICONS
 @import 'node_modules/modularscale-sass/stylesheets/modularscale';
 
 $modularscale: (
@@ -53,6 +31,7 @@ $modularscale: (
 @import '../../static/fonts/MuseoSansMedium/MuseoSansMedium';
 @import '../../static/fonts/MuseoSansBold/MuseoSansBold';
 @import '../../static/fonts/MuseoSansBlack/MuseoSansBlack';
+@import '../../static/fonts/icons/icons';
 
 @mixin light {
     font-family: "MuseoSansCyrl-100";
@@ -74,13 +53,26 @@ $modularscale: (
     font-family: "MuseoSansCyrl-900";
 }
 
-body {
-    @include medium();
-}
+// Icons
+// @import 'variables/_ionicons-variables.scss';
+// @import '../css/ionicons.min.css';
 //----> TYPOGRAPHY END
 
+@import 'core/*';
 
 // ################## BLOCKS ##################
+
+//----> MISCELLANEOUS
+@import 'blocks/title/*';
+@import 'blocks/tile/*';
+@import 'blocks/button/*';
+@import 'blocks/fab/*';
+@import 'blocks/icon/*';
+@import 'blocks/link/*';
+@import 'blocks/input/*';
+@import 'blocks/breadcrumbs/*';
+@import 'blocks/ribbon/*';
+//----> MISCELLANEOUS END
 
 //----> HEADER
 @import 'blocks/header-top/*';
@@ -92,5 +84,44 @@ body {
 @import 'blocks/footer-bottom/*';
 //----> FOOTER END
 
+//----> SIDE-MENU
+@import 'blocks/side-menu/*';
+//----> SIDE-MENU END
+
+//----> SIDE-MENU
+@import 'blocks/nav-menu/*';
+//----> SIDE-MENU END
+
+//----> CATALOG
+@import 'blocks/catalog/*';
+//----> CATALOG END
+
+//----> GALLERY
+@import 'blocks/gallery/*';
+//----> GALLERY END
+
+//----> CARD
+@import 'blocks/card/*';
+//----> CARD END
+
 // ################## END BLOCKS ##################
 
+
+
+
+// GARBAGE
+
+.row__title {
+    padding: 20px 0px 10px 0px;
+    font-size: ms(2);
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-area_components {
+    padding: 50px 15px 50px 15px;
+}
