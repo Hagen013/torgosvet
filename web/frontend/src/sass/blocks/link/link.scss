@@ -1,0 +1,29 @@
+
+.link_filled {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    color: $text-black;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transition-property: color;
+    transition-duration: 0.1s;
+}
+.link_filled:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $acid-green;
+    transform: scaleY(0);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+}
+.link_filled:hover:before, .link_filled:focus:before, .link_filled:active:before {
+    transform: scaleY(1);
+}

@@ -1,0 +1,91 @@
+$header-top-height: 78px;
+
+.header-top {
+    position: relative;
+    height: $header-top-height;
+    background: white;
+    .content-area {
+        position: relative;
+    }
+}
+
+.header-top__logo {
+    height: 100%;
+    width: 170px;
+    color: $text-black;
+    font-size: ms(3);
+    text-align: center;
+    line-height: $header-top-height;
+    @include bold();
+    @include mq($from: tablet) {
+        width: 235px;
+        font-size: 34px;
+    }
+}
+
+.header-top__nav {
+    display: none;
+    height: 100%;
+    width: 505px;
+    padding: 32px 15px 22px 15px;
+    justify-content: space-around;
+    font-size: ms(-1);
+    @include mq($from: desktop) {
+        display: flex;
+    }
+    @include mq($from: wide) {
+        width: 680px;
+    }
+}
+
+.header-top__nav-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header-top__controls {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    @include mq($from: desktop) {
+        display: none;
+    }
+}
+
+.header-top__control {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    color: $text-black;
+    @include mdc-ripple-color(black, 0.1);
+}
+
+.header-top__phones {
+    display: none;
+    width: 200px;
+    padding: 15px 0px 15px 15px;
+    text-transform: uppercase;
+    text-align: right;
+    @include bold();
+    @include mq($from: desktop) {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+}
+
+.header-top__phone-caption {
+    font-size: ms(-1);
+}
+
+.header-top__phone {
+    font-size: ms(2);
+}

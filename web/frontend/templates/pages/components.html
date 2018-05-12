@@ -1,0 +1,100 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="content-area content-area_components">
+        <h1 class="title">Компоненты</h1>
+        <div class="row__title">
+            Кнопки
+        </div>
+        <div class="row">
+            <!-- Обычная кнопка -->
+            <button class="button ripple">
+            Кнопка
+            </button>
+            <!-- Обычная кнопка -->
+            <!-- С иконкой -->
+            <button class="button ripple">
+                <i class="button__icon icon icon_heart"></i>
+                С иконкой
+            </button>
+            <!-- С иконкой -->
+            <!-- Поднятая -->
+            <button class="button button_raised ripple">
+            Поднятая кнопка
+            </button>
+            <!-- Поднятая -->
+            <!-- Unelevated -->
+            <button class="button button_unelevated ripple">
+                Unelevated
+            </button>
+            <!-- Unelevated -->
+            <!-- Stroked -->
+            <button class="button button_stroked ripple">
+                Stroked
+            </button>
+            <!-- Stroked -->
+            <!-- Compact -->
+            <button class="button button_compact button_unelevated ripple">
+                Compact
+            </button>
+            <!-- Compact -->
+            <!-- Compact -->
+            <button class="button button_dense button_unelevated ripple">
+                Dense
+            </button>
+            <!-- Compact -->
+        </div>
+        <div class="row__title">Плавающие кнопки</div>
+        <div class="row">
+            <button class="fab ripple" aria-label="Favorite">
+                <span class="fab__icon icon icon_heart">
+                </span>
+            </button>
+            <button class="fab fab_mini ripple" aria-label="Favorite">
+                <span class="fab__icon icon icon_heart">
+                </span>
+            </button>
+        </div>
+        <div class="row__title">Элементы управления</div>
+        <div class="row">
+            <div class="mdc-checkbox">
+            <input type="checkbox"
+                    class="mdc-checkbox__native-control"/>
+            <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark"
+                    viewBox="0 0 24 24">
+                <path class="mdc-checkbox__checkmark__path"
+                        fill="none"
+                        stroke="white"
+                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                </svg>
+                <div class="mdc-checkbox__mixedmark"></div>
+            </div>
+            </div>
+            <div class="mdc-form-field">
+            <div class="mdc-checkbox">
+                <input type="checkbox"
+                    id="my-checkbox"
+                    class="mdc-checkbox__native-control"/>
+                <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark"
+                    viewBox="0 0 24 24">
+                    <path class="mdc-checkbox__checkmark__path"
+                        fill="none"
+                        stroke="white"
+                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                </svg>
+                <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+            </div>
+            <label for="my-checkbox" id="my-checkbox-label">Input форма</label>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    {{ super() }}
+    <script src="{{ static('js/index.js') }}"></script>
+{% endblock script%}

@@ -1,0 +1,22 @@
+.ribbon {
+    position: absolute;
+    top: 15px;
+    left: -12px;
+    padding: 3px 12px 2px 23px;
+    font-size: 12px;
+    color: $white;
+    transform: skewX(-25deg);
+    z-index: 50;
+    @include mdc-elevation(2);
+}
+
+.ribbon__content {
+    font-weight: 600;
+    transform: skewX(25deg);
+    @include bold();
+}
+
+.ribbon_green {
+    color: $text-black;
+    background: $acid-green;
+}

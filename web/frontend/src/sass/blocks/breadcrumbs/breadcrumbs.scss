@@ -1,0 +1,38 @@
+.breadcrumbs {
+    margin: 20px 0;
+    background: $white;
+    font-size: ms(-2);
+}
+
+.breadcrumbs__items {
+    padding: 10px 0px 10px 0px;
+    list-style: none;
+}
+
+.breadcrumbs__item {
+    display: inline-block;
+    padding: 0px 2px 0px 2px;
+}
+
+.breadcrumbs__link {
+    color: #4d4d4d;
+}
+
+.breadcrumbs__item-first {
+
+}
+
+.breadcrumbs__item-last {
+
+}
+
+.breadcrumbs__content-area {
+    padding: 0px 15px 0px 15px;
+    @include mq($from: mobile, $until: desktop) {
+        width: 100%;
+    }
+}
+
+.breadcrumbs__delimeter {
+    padding: 0px 2px 0px 2px;
+}

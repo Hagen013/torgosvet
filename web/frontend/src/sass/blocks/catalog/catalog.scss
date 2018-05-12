@@ -1,0 +1,70 @@
+.catalog {
+    display: flex;
+    @include mq($from: desktop) {
+        padding: 0px 15px 0px 15px;
+    }
+}
+
+.catalog__left-content {
+    display: none;
+    @include mq($from: desktop) {
+        display: block;
+    }
+    @include mq($from: desktop, $until: wide) {
+        width: 212px;
+    }
+    @include mq($from: wide) {
+        width: 263px;
+    }
+}
+
+.catalog__right-content {
+    width: 100%;
+    @include mq($from: tablet) {
+        padding: 0px 15px 0px 15px;
+    }
+    @include mq($from: desktop) {
+        width: 728px;
+        padding: 0px 0px 0px 30px;
+    }
+    @include mq($from: wide) {
+        width: 876px;
+    }
+}
+
+.catalog__nav {
+    padding: 0px 4px 0px 4px;
+    max-height: 336px;
+    overflow-y: scroll;
+    background: $white;
+}
+
+.catalog__nav-item {
+    display: block;
+    height: 48px;
+    width: 100%;
+    font-size: ms(-1);
+    color: $text-black !important;
+    text-transform: none;
+    text-align: left;
+    line-height: 48px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    @include medium();
+    @include mdc-ripple-color(#48daa1, 0.1);
+}
+
+.green_scrollbar{
+    overflow-y: scroll;
+  
+    &::-webkit-scrollbar-track {
+      background-color: #ebf2f7;
+    }
+    &::-webkit-scrollbar {
+      width: 15px;
+      background-color: #ebf2f7;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 15px;
+      background-color: #48daa1;
+    }
+  }

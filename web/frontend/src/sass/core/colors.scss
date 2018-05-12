@@ -1,0 +1,19 @@
+$text-black: #1c1c1c;
+$acid-green: #00e871;
+$white: white;
+$grey: #cccccc;
+$text-grey: #909090;
+$mint: #6ec47f;
+$mate: #48daa1;
+
+$filter-item-border: #f2f2f2;
+$filter-item-hover: #f7f7f7;
+
+$border: #e7eff4;
+$border-hover: #b4c6d2;
+
+$link-color: #3757c5;
+
+.button {
+    @include bold();
+}

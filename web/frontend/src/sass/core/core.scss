@@ -1,3 +1,84 @@
+.main {
+  height: 100%;
+  width: 100%;
+  transition: transform 300ms ease-out;
+  will-change: transform;
+}
+
+.clearfix {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.acid-green {
+  color: $acid-green;
+}
+
+@mixin acid-green {
+  color: $acid-green;
+}
+
+.content-area {
+  height: 100%;
+  margin: 0 auto;
+  width: 320px;
+  @include mq($from: tablet, $until: desktop) {
+      width: 750px;
+  }
+  @include mq($from: desktop, $until: wide) {
+      width: 970px;
+  }
+  @include mq($from: wide) {
+      width: 1170px;
+  }
+}
+
+.content-area_flex {
+  display: flex;
+  width: 100%;
+  padding: 0px 15px 0px 15px;
+  @include mq($from: desktop, $until: wide) {
+    width: 970px;
+  }
+  @include mq($from: wide) {
+    width: 1170px;
+  }
+}
+
+
+.page-content-wrapper {
+  margin-bottom: -374px;
+  min-height: 100%;
+  min-width: 320px;
+  &:after {
+      content: '';
+      display: block;
+      height: 600px;
+  }
+}
+
+.page-footer {
+  height: 374px;
+  min-width: 320px;
+}
+
 body {
-    color: black;
+  font-size: 16px;
+  color: $text-black;
+  @include medium();
 }
